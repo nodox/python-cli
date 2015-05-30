@@ -28,12 +28,9 @@ def createSortedOutput():
 	File output structure is formatted with the awk command line tool. """
 
 	with open('unsorted_output.txt', 'w') as f:
-		slashFile = subprocess.check_output(
-										['awk', '{print $3, $2, $4, $1}', 'FS=/', 'OFS=, ', 'slash'])
-		csvFile = subprocess.check_output(
-										['awk', '{print $2, $3, $1, $4}', 'FS=,', 'OFS=, ', 'csv'])
-		pipeFile = subprocess.check_output(
-										['awk', '{print $2, $1, $3, $4}', 'FS=|', 'OFS=, ', 'pipe'])
+		slashFile = subprocess.check_output(['awk', '{print $3, $2, $4, $1}', 'FS=/', 'OFS=, ', 'slash'])
+		csvFile = subprocess.check_output(['awk', '{print $2, $3, $1, $4}', 'FS=,', 'OFS=, ', 'csv'])
+		pipeFile = subprocess.check_output(['awk', '{print $2, $1, $3, $4}', 'FS=|', 'OFS=, ', 'pipe'])
 
 		f.write(slashFile)
 		f.write(csvFile)
@@ -48,21 +45,13 @@ def createSortedOutput():
 def createCLI():
 	""" Creates the command line interface with possible arguments """
 
-	parser = argparse.ArgumentParser(
-											description='Show a list of books, \
-																	alphabetical ascending by author\'s last name')
+	parser = argparse.ArgumentParser(description='Show a list of books, alphabetical ascending by author\'s last name')
 
-	parser.add_argument('--filter', 
-											help='show subset of books, looks \
-														for the argument as a substring of any of the fields')
+	parser.add_argument('--filter', help='show subset of books, looks for the argument as a substring of any of the fields')
 	
-	parser.add_argument('--year', 
-											help='sort the books by year, ascending instead of default sort',
-											action='store_true')
+	parser.add_argument('--year', help='sort the books by year, ascending instead of default sort', action='store_true')
 	
-	parser.add_argument('--reverse', 
-											help='reverse sort',
-											action='store_true')
+	parser.add_argument('--reverse', help='reverse sort', action='store_true')
 	
 	args = parser.parse_args()
 	
