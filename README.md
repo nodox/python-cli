@@ -31,13 +31,15 @@ Here are some sample runs of the program
 	python books.py --filter 199 --reverse
 	McConnell, Steve, Code Complete, 1993
 	Fowler, Martin, Refactoring, 1999
-
+`
+`
 	python books.py --filter er --year
 	Fowler, Martin, Refactoring, 1999
 	Fowler, Martin, Patterns of Enterprise Application Architecture, 2002
 	Beck, Kent, Implementation Patterns, 2007
 	Martin, Robert, Clean Code, 2008
-
+`
+`
 	python books.py
 	Beck, Kent, Test-Driven Development, 2002
 	Beck, Kent, Implementation Patterns, 2007
