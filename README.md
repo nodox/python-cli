@@ -1,6 +1,6 @@
 # Python Command Line Tool
 
-Write a program that reads in records from various input files and then outputs the list with command line options to sort or filter them.
+This programs reads in records from various input files and then outputs the list with command line options to sort or filter them.
 
 Input file format:
 
@@ -27,7 +27,7 @@ optional arguments:
   --reverse        reverse sort
 
 Here are some sample runs of the program
-`python
+`
 python books.py --filter 199 --reverse
 McConnell, Steve, Code Complete, 1993
 Fowler, Martin, Refactoring, 1999
